@@ -1,0 +1,56 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/nvidia/yolo_repo/yolo/apps/trt-yolo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_61356/fast"
+/usr/bin/make -f CMakeFiles/cmTC_61356.dir/build.make CMakeFiles/cmTC_61356.dir/build
+make[1]: Entering directory '/home/nvidia/yolo_repo/yolo/apps/trt-yolo/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_61356.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -std=c++11 -Wall -Wunused-function -Wunused-variable -Wfatal-errors    -o CMakeFiles/cmTC_61356.dir/CheckSymbolExists.cxx.o -c /home/nvidia/yolo_repo/yolo/apps/trt-yolo/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_61356
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61356.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wall -Wunused-function -Wunused-variable -Wfatal-errors     CMakeFiles/cmTC_61356.dir/CheckSymbolExists.cxx.o  -o cmTC_61356 
+CMakeFiles/cmTC_61356.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.cxx:(.text+0x18): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_61356.dir/build.make:97: recipe for target 'cmTC_61356' failed
+make[1]: *** [cmTC_61356] Error 1
+make[1]: Leaving directory '/home/nvidia/yolo_repo/yolo/apps/trt-yolo/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_61356/fast' failed
+make: *** [cmTC_61356/fast] Error 2
+
+File /home/nvidia/yolo_repo/yolo/apps/trt-yolo/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/nvidia/yolo_repo/yolo/apps/trt-yolo/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cacdd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cacdd.dir/build.make CMakeFiles/cmTC_cacdd.dir/build
+make[1]: Entering directory '/home/nvidia/yolo_repo/yolo/apps/trt-yolo/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_cacdd.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -std=c++11 -Wall -Wunused-function -Wunused-variable -Wfatal-errors -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_cacdd.dir/CheckFunctionExists.cxx.o -c /home/nvidia/yolo_repo/yolo/apps/trt-yolo/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_cacdd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cacdd.dir/link.txt --verbose=1
+/usr/bin/c++  -std=c++11 -Wall -Wunused-function -Wunused-variable -Wfatal-errors -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_cacdd.dir/CheckFunctionExists.cxx.o  -o cmTC_cacdd -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_cacdd.dir/build.make:97: recipe for target 'cmTC_cacdd' failed
+make[1]: *** [cmTC_cacdd] Error 1
+make[1]: Leaving directory '/home/nvidia/yolo_repo/yolo/apps/trt-yolo/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_cacdd/fast' failed
+make: *** [cmTC_cacdd/fast] Error 2
+
+
